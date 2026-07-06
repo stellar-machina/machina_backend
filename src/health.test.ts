@@ -3,7 +3,7 @@ import assert from "node:assert";
 import request from "supertest";
 import { app } from "./index.js";
 
-void describe("AgentPay Backend", () => {
+void describe("Stellar Machina Backend", () => {
   void it("app is defined", () => {
     assert.ok(app);
   });

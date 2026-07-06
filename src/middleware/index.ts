@@ -115,7 +115,7 @@ function pauseGuardMiddleware(req: Request, res: Response, next: NextFunction): 
   if (req.path === "/api/v1/admin/unpause") return next();
   res.status(503).json({
     error: "service_paused",
-    message: "AgentPay backend is paused; only admin/unpause and reads are accepted",
+    message: "Stellar Machina backend is paused; only admin/unpause and reads are accepted",
     requestId: (req as StellarMachinaRequest).id,
   });
 }

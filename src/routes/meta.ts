@@ -50,9 +50,9 @@ export function createMetaRouter(): Router {
     res.json({
       openapi: "3.0.3",
       info: {
-        title: "AgentPay Backend",
+        title: "Stellar Machina Backend",
         version: "1.0.0",
-        description: "Metering, billing, and settlement gateway for AgentPay.",
+        description: "Metering, billing, and settlement gateway for Stellar Machina.",
       },
       paths: {
         "/health": { get: { summary: "Shallow health check" } },

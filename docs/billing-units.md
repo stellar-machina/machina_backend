@@ -1,6 +1,6 @@
 # Billing Units and Settlement Semantics
 
-AgentPay backend quotes service usage in **stroops**, the smallest native XLM
+Stellar Machina backend quotes service usage in **stroops**, the smallest native XLM
 unit on Stellar.
 
 ## Stroops

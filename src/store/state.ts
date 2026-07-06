@@ -1,5 +1,5 @@
 /**
- * Mutable process-local stores used by the in-memory AgentPay API.
+ * Mutable process-local stores used by the in-memory Stellar Machina API.
  *
  * These exports preserve the existing development behavior: state lives only
  * for the lifetime of the Node process and resets on restart.

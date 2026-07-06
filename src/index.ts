@@ -17,7 +17,7 @@ import { createWebhooksRouter } from "./routes/webhooks.js";
 const PORT = process.env.PORT ?? 3001;
 
 /**
- * Composes the AgentPay Express application from route and middleware modules.
+ * Composes the Stellar Machina Express application from route and middleware modules.
  */
 function createApp() {
   const app = express();
@@ -46,7 +46,7 @@ const app = createApp();
 
 if (process.argv[1]?.endsWith("index.js") || process.argv[1]?.endsWith("index.ts")) {
   const server = app.listen(PORT, () => {
-    console.log(`AgentPay backend listening on port ${PORT}`);
+    console.log(`Stellar Machina backend listening on port ${PORT}`);
   });
 
   const shutdown = (signal: string) => {

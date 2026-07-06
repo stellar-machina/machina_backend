@@ -1,7 +1,7 @@
 import type { Request } from "express";
 
 /**
- * Request shape used by AgentPay middleware once request metadata has been
+ * Request shape used by Stellar Machina middleware once request metadata has been
  * attached.
  */
 export type StellarMachinaRequest = Request & {

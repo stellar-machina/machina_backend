@@ -1,6 +1,6 @@
-# AgentPay Backend
+# Stellar Machina Backend
 
-API gateway, metering, and billing backend for the AgentPay protocol (machine-to-machine payments on Stellar).
+API gateway, metering, and billing backend for the Stellar Machina protocol (machine-to-machine payments on Stellar).
 
 ## Overview
 
