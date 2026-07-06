@@ -1,7 +1,7 @@
 {
   "name": "stellar-machina-backend",
   "version": "1.0.0",
-  "description": "AgentPay API gateway, metering, and billing backend",
+  "description": "Stellar Machina API gateway, metering, and billing backend",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
@@ -12,7 +12,7 @@
     "format": "prettier --check ."
   },
   "keywords": [
-    "agentpay",
+    "stellar-machina",
     "stellar",
     "api",
     "billing"
