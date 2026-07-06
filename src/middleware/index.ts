@@ -12,7 +12,7 @@ import {
   RATE_LIMIT_PER_WINDOW,
   RATE_LIMIT_WINDOW_MS,
 } from "../store/state.js";
-import type { AgentPayRequest } from "../types.js";
+import type { StellarMachinaRequest } from "../types.js";
 
 /**
  * Installs middleware that must run before the early admin/config/metrics
@@ -89,7 +89,7 @@ function securityHeadersMiddleware(
 function requestIdMiddleware(req: Request, res: Response, next: NextFunction): void {
   const incoming = req.header("x-request-id");
   const id = incoming && incoming.length <= 200 ? incoming : randomUUID();
-  (req as AgentPayRequest).id = id;
+  (req as StellarMachinaRequest).id = id;
   res.setHeader("X-Request-Id", id);
   next();
 }
@@ -102,7 +102,7 @@ function apiKeyRecognitionMiddleware(
 ): void {
   const supplied = req.header("x-api-key");
   if (typeof supplied === "string" && apiKeyStore.has(supplied)) {
-    (req as AgentPayRequest).apiKey = supplied;
+    (req as StellarMachinaRequest).apiKey = supplied;
   }
   next();
 }
@@ -116,7 +116,7 @@ function pauseGuardMiddleware(req: Request, res: Response, next: NextFunction): 
   res.status(503).json({
     error: "service_paused",
     message: "AgentPay backend is paused; only admin/unpause and reads are accepted",
-    requestId: (req as AgentPayRequest).id,
+    requestId: (req as StellarMachinaRequest).id,
   });
 }
 
@@ -133,7 +133,7 @@ function rateLimitMiddleware(req: Request, res: Response, next: NextFunction): v
     res.status(429).json({
       error: "rate_limited",
       message: `more than ${RATE_LIMIT_PER_WINDOW} requests per ${RATE_LIMIT_WINDOW_MS / 1000}s`,
-      requestId: (req as AgentPayRequest).id,
+      requestId: (req as StellarMachinaRequest).id,
     });
     return;
   }
@@ -153,7 +153,7 @@ function requestTimerMiddleware(req: Request, res: Response, next: NextFunction)
     if (process.env.NODE_ENV !== "test") {
       console.log(
         JSON.stringify({
-          requestId: (req as AgentPayRequest).id,
+          requestId: (req as StellarMachinaRequest).id,
           method: req.method,
           path: req.path,
           status: res.statusCode,

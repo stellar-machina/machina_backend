@@ -8,7 +8,7 @@ import {
   installPreRouteMiddleware,
   installRequestStateMiddleware,
 } from "./middleware/index.js";
-import type { AgentPayRequest } from "./types.js";
+import type { StellarMachinaRequest } from "./types.js";
 
 // We create a minimal test app that mounts the same middleware stack as the
 // real app to act as our "test-only assertion path" for observing req.apiKey.
@@ -16,7 +16,7 @@ const testApp = express();
 installPreRouteMiddleware(testApp);
 installRequestStateMiddleware(testApp);
 testApp.get("/_test/api-key", (req, res) => {
-  res.json({ apiKey: (req as AgentPayRequest).apiKey });
+  res.json({ apiKey: (req as StellarMachinaRequest).apiKey });
 });
 
 void describe("API Key Recognition Middleware", () => {

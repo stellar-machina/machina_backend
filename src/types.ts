@@ -4,7 +4,7 @@ import type { Request } from "express";
  * Request shape used by AgentPay middleware once request metadata has been
  * attached.
  */
-export type AgentPayRequest = Request & {
+export type StellarMachinaRequest = Request & {
   id?: string;
   apiKey?: string;
 };
@@ -14,5 +14,5 @@ export type AgentPayRequest = Request & {
  * repeat the same type assertion.
  */
 export function getRequestId(req: Request): string | undefined {
-  return (req as AgentPayRequest).id;
+  return (req as StellarMachinaRequest).id;
 }
