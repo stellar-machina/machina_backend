@@ -8,7 +8,7 @@ export function createMetaRouter(): Router {
   const router = Router();
 
   router.get("/health", (_req, res: Response) => {
-    res.json({ status: "ok", service: "agentpay-backend" });
+    res.json({ status: "ok", service: "stellar-machina-backend" });
   });
 
   router.get("/api/v1/health/deep", (_req, res: Response) => {

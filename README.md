@@ -17,7 +17,7 @@ API gateway, metering, and billing backend for the AgentPay protocol (machine-to
 1. **Clone the repo** (or add remote and pull):
 
    ```bash
-   git clone <repo-url> && cd agentpay-backend
+   git clone <repo-url> && cd stellar-machina-backend
    ```
 
 2. **Install dependencies**:
@@ -42,7 +42,7 @@ API gateway, metering, and billing backend for the AgentPay protocol (machine-to
 ## Project structure
 
 ```
-agentpay-backend/
+stellar-machina-backend/
 ├── src/
 │   ├── index.ts          # Thin Express composition root that exports app
 │   ├── events.ts         # Bounded in-memory audit event log helpers

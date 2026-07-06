@@ -1,5 +1,5 @@
 {
-  "name": "agentpay-backend",
+  "name": "stellar-machina-backend",
   "version": "1.0.0",
   "description": "AgentPay API gateway, metering, and billing backend",
   "main": "dist/index.js",
