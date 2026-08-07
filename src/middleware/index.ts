@@ -121,7 +121,7 @@ function pauseGuardMiddleware(req: Request, res: Response, next: NextFunction): 
 }
 
 /** In-process IP rate limiter matching the original 60/min behavior. */
-function rateLimitMiddleware(req: Request, res: Response, next: NextFunction): void {
+export function rateLimitMiddleware(req: Request, res: Response, next: NextFunction): void {
   if (process.env.NODE_ENV === "test") return next();
   const ip = req.ip ?? req.socket.remoteAddress ?? "unknown";
   const now = Date.now();
