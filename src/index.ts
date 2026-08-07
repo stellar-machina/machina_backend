@@ -8,6 +8,7 @@ import { createApiKeysRouter } from "./routes/apiKeys.js";
 import { createConfigRouter } from "./routes/config.js";
 import { installErrorHandlers } from "./routes/errors.js";
 import { createEventsRouter } from "./routes/events.js";
+import { createHealthRouter } from "./routes/health.js";
 import { createMetaRouter } from "./routes/meta.js";
 import { createMetricsRouter } from "./routes/metrics.js";
 import { createServicesRouter } from "./routes/services.js";
@@ -23,6 +24,10 @@ function createApp() {
   const app = express();
 
   installPreRouteMiddleware(app);
+
+  // Liveness/readiness probes are registered before the request-state
+  // middleware so orchestrators can reach them without auth or rate limiting.
+  app.use(createHealthRouter());
 
   app.use(createAdminRouter());
   app.use(createConfigRouter());
